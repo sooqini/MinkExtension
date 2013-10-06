@@ -178,6 +178,17 @@ trait MinkDictionary
     }
 
     /**
+     * Presses button or follows link with specified id|name|title|alt|value.
+     *
+     * @When /^(?:|I )click "(?P<element>(?:[^"]|\\")*)"$/
+     */
+    public function clickLinkOrButton($locator)
+    {
+        $locator = $this->fixStepArgument($locator);
+        $element = $this->getSession()->getPage()->clickButtonOrLink($locator);
+    }
+
+    /**
      * Clicks link with specified id|title|alt|text.
      *
      * @When /^(?:|I )follow "(?P<link>(?:[^"]|\\")*)"$/
