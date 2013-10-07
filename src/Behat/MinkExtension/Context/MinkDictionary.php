@@ -185,7 +185,7 @@ trait MinkDictionary
     public function clickLinkOrButton($locator)
     {
         $locator = $this->fixStepArgument($locator);
-        $element = $this->getSession()->getPage()->clickButtonOrLink($locator);
+        $element = $this->getSession()->getPage()->clickLinkOrButton($locator);
     }
 
     /**
